@@ -32,6 +32,8 @@ def main():
     paises = api.by_names(LETRAS_PAISES)
     tiempo_paralelo = time.time() - inicio
 
+    paises.sort(key=lambda p: p.poblacion, reverse=True)
+
     imprimir_tabla(paises)
     imprimir_metricas(paises, tiempo_paralelo)
 
